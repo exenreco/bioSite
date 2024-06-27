@@ -26,6 +26,9 @@
     /* text colors */
     --primary-text: rgba(255, 255, 255, 1);
     --secondary-text: rgba( 33, 33, 33, 1);
+
+    /* typography */
+    --typography-main: Arial, Helvetica, sans-serif;
 }
 
 
@@ -53,14 +56,17 @@ aside, section, figure, figcaption, video {
 
 /* Site Header: header style rules */
 .site-header {
-    position: relative;
+    position: fixed;
+    font-family: var(--typography-main);
     display: block;
     width: 100%;
     height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
     margin: 0;
     z-index: 1;
 }
-
 .site-header > .background {
     position: absolute;
     display: inline-block;
@@ -74,7 +80,6 @@ aside, section, figure, figcaption, video {
     background: var(--primary-color);
     border-bottom: 0.5em solid var(--secondary-primary-color);
 }
-
 .site-header > .header-container {
     display: flex;
     flex-wrap: nowrap;
@@ -87,33 +92,24 @@ aside, section, figure, figcaption, video {
     margin: auto;
 }
 
+
 /* Site Logo: style rules for header logo */
 .site-header > .header-container .logo-area {
     width: 25em;
 }
-
 .site-header > .header-container .logo-area a {
     text-decoration: none;
 }
-
 .site-header > .header-container .logo-area a img {
     display: block;
     width: 52px;
 }
-
 .site-header > .header-container .logo-area p.tagline {
     color: var(--primary-text);
 }
 
-/* Site Navigation: style rules for header nav */
-.site-header {
-    position: fixed;
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-}
 
+/* Site Navigation: style rules for header nav */
 .site-header > .header-container .nav-area {
     display: flex;
     flex-wrap: wrap;
@@ -122,27 +118,24 @@ aside, section, figure, figcaption, video {
     width: calc(100% - 25em);
     margin: auto;
 }
-
 .site-header > .header-container .nav-area ul,
 .site-header > .header-container .nav-area ul li {
     display: inline-block;
 }
-
 .site-header > .header-container .nav-area ul {
     margin-top: auto;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: auto;
 }
-
 .site-header > .header-container .nav-area ul li {
     display: inline-block;
     margin: 12px;
 }
-
 .site-header > .header-container .nav-area ul li a {
     /*font-family: 'Courier New', Courier, monospace;*/
     font-weight: bolder;
+    text-transform: uppercase;
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -169,9 +162,9 @@ aside, section, figure, figcaption, video {
 }
 
 
-
 /* Site Hero: style rules for title area */
 .content-area {
+    font-family: var(--typography-main);
     z-index: -1;
 }
 .content-area > .hero .hero-background {
@@ -185,6 +178,7 @@ aside, section, figure, figcaption, video {
     height: 100%;
     margin: 0;
 }
+
 
 /* Hero Front-page style rules */
 .content-area.front-page > .hero.front-page {
@@ -204,8 +198,25 @@ aside, section, figure, figcaption, video {
     margin: auto;
     width: auto;
     max-width: var(--desktop-width);
-    min-width: 25em;
+    text-align: center;
 }
+.content-area > .hero.front-page .hero-wrapper button.primary,
+.content-area > .hero.front-page .hero-wrapper button.secondary {
+    display: inline-block;
+    padding: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 8px;
+    margin: 12px;
+    cursor: pointer;
+}
+.content-area > .hero.front-page .hero-wrapper button.primary {
+}
+.content-area > .hero.front-page .hero-wrapper button.secondary {
+}
+
 
 /* Hero Other-page style rules */
 .content-area > .hero.page {
@@ -251,6 +262,7 @@ aside, section, figure, figcaption, video {
     width: 100%;
     margin: 0;
     bottom: 0;
+    font-family: var(--typography-main);
     border-top: 0.5em solid var(--secondary-primary-color);
     color: var(--primary-text)
 }
@@ -277,6 +289,7 @@ aside, section, figure, figcaption, video {
     min-width: 25em;
     margin: auto;
     padding: 5px;
+    font-family: var(--typography-main);
 }
 .site-footer > .footer-container .contact-info,
 .site-footer > .footer-container .social-media,
@@ -297,7 +310,6 @@ aside, section, figure, figcaption, video {
     border-left: 0.2em solid rgba( 255, 255, 255, 0.4);
     border-right: 0.2em solid rgba( 255, 255, 255, 0.4);
 }
-
 .site-footer > .footer-container .social-media ul {
     list-style-type: none;
 }
@@ -332,7 +344,6 @@ aside, section, figure, figcaption, video {
 }
 
 
-
 /* footer links */
 .site-footer a {
     text-decoration: none;
@@ -357,18 +368,22 @@ aside, section, figure, figcaption, video {
 
 
 /* Media Query for Tablet Viewport */
-@media only screen and (min-width: 620px), print {
+@media only screen and (min-width: 180px), print {
     
     /* navigation toggle */
     .site-header > .header-container .nav-area .mobile label {
         display: none;
         visibility: hidden;
     }
+
+    .site-header > .header-container .nav-area ul li a {
+        font-size: 1.05em;
+    }
 }
 
 
 /* Style rules to show mobile class */
-@media only screen and (max-width: 620px), print {
+@media only screen and (max-width: 1080px), print {
 
     /* navigation toggle */
     .site-header > .header-container .nav-area .mobile label {
