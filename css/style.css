@@ -131,6 +131,7 @@ aside, section, figure, figcaption, video {
 .site-header > .header-container .nav-area ul li {
     display: inline-block;
     margin: 12px;
+    transition: border 40ms ease-in-out;
 }
 .site-header > .header-container .nav-area ul li a {
     /*font-family: 'Courier New', Courier, monospace;*/
@@ -139,10 +140,17 @@ aside, section, figure, figcaption, video {
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.2em;
+    transition: color 40ms ease-in-out;
 }
 .site-header > .header-container .nav-area ul li a:hover {
     color: var(--secondary-primary-color);
+    transition: color 40ms ease-in-out;
 }
+.site-header > .header-container .nav-area ul li:has( > a:hover ) {
+    border-bottom: 2px solid var(--secondary-primary-color);
+    transition: border 40ms ease-in-out;
+}
+
 
 /* navigation toggle */
 .site-header > .header-container .nav-area .mobile label {
