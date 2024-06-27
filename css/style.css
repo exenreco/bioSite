@@ -320,24 +320,24 @@ aside, section, figure, figcaption, video {
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact {
     border-radius: 8px;
-    background: red;
+    background: var(--wash-dark);
+    border: 2px solid var(--primary-color);
     margin: 14px;
-    padding: 12px;
+    box-shadow: 2px 2px 10px var(--tonner-dark);
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact h2 {
-    position: absolute;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    background: var(--tonner-lightest);
+    background-color: #333333;
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content {
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin-top: 38px;
+}
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content img {
+    width: 100%;
+    margin: 8px;
+    border: 1px solid red;
 }
 
 /* Site Footer: style rules */
