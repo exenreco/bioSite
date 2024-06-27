@@ -261,7 +261,6 @@ aside, section, figure, figcaption, video {
 {
     width: auto;
     max-width: var(--desktop-width);
-    min-width: 25em;
     margin: auto;
     min-height: 80vh;
     padding: 5px;
