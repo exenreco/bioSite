@@ -134,10 +134,14 @@ aside, section, figure, figcaption, video {
 }
 .site-header > .header-container .nav-area ul li a {
     /*font-family: 'Courier New', Courier, monospace;*/
+    color: var(--wash-dark);
     font-weight: bolder;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.2em;
+}
+.site-header > .header-container .nav-area ul li a:hover {
+    color: var(--secondary-primary-color);
 }
 
 /* navigation toggle */
@@ -190,7 +194,8 @@ aside, section, figure, figcaption, video {
     justify-content: center;
 }
 .content-area > .hero.front-page .hero-background {
-    background: blueviolet;
+    background: var(--primary-color);
+    opacity: 0.2;
 }
 .content-area > .hero.front-page .hero-wrapper {
     position: relative;
@@ -204,8 +209,8 @@ aside, section, figure, figcaption, video {
 .content-area > .hero.front-page .hero-wrapper button.secondary {
     display: inline-block;
     padding: 10px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
     font-weight: bold;
     font-size: 1.2em;
     border-radius: 8px;
@@ -213,6 +218,8 @@ aside, section, figure, figcaption, video {
     cursor: pointer;
 }
 .content-area > .hero.front-page .hero-wrapper button.primary {
+    background-color: var(--secondary-primary-color);
+    color: var(--accent-secondary-color);
 }
 .content-area > .hero.front-page .hero-wrapper button.secondary {
 }
@@ -224,8 +231,8 @@ aside, section, figure, figcaption, video {
     text-align: center;
 }
 .content-area > .hero.page .hero-background {
-    background: blueviolet;
-    opacity: 0.5;
+    background: var(--primary-color);
+    opacity: 0.2;
 }
 .content-area > .hero.page .hero-wrapper {
     width: auto;
