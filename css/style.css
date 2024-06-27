@@ -174,10 +174,19 @@ aside, section, figure, figcaption, video {
 .content-area {
     z-index: -1;
 }
-.content-area > .hero {
-    background: blueviolet;
+.content-area > .hero .hero-background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
+/* Hero Front-page style rules */
 .content-area.front-page > .hero.front-page {
     height: 100vh;
     display: flex;
@@ -185,6 +194,9 @@ aside, section, figure, figcaption, video {
     flex-wrap: nowrap;
     flex-direction: unset;
     justify-content: center;
+}
+.content-area > .hero.front-page .hero-background {
+    background: blueviolet;
 }
 .content-area > .hero.front-page .hero-wrapper {
     position: relative;
@@ -195,10 +207,13 @@ aside, section, figure, figcaption, video {
     min-width: 25em;
 }
 
+/* Hero Other-page style rules */
 .content-area > .hero.page {
     position: relative;
 }
 .content-area > .hero.page .hero-background {
+    background: blueviolet;
+    opacity: 0.5;
 }
 .content-area > .hero.page .hero-wrapper {
     width: auto;
