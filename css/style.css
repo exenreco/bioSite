@@ -59,8 +59,8 @@
 
 
 /* CSS Reset */
-body, header, nav, main, footer, img, h1, h3, ul, 
-aside, section, figure, figcaption, video {
+body, header, nav, main, footer, img, h1, h2, h3, h4, h5, h6,
+ul, aside, section, figure, figcaption, video {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
@@ -293,6 +293,9 @@ aside, section, figure, figcaption, video {
     padding-top: 12em;
     padding-bottom: 0.2em;
 }
+.content-area > .hero.page .hero-wrapper .page-title {
+    margin-bottom: 20px;
+}
 
 
 /* Site Main: style rules for page content */
@@ -312,6 +315,7 @@ aside, section, figure, figcaption, video {
 
 /* FUN FACT: Style rules */
 .content-area > .page-wrapper.fun-facts-page h2.heading {
+    margin: 32px;
     text-align: center;
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content {
@@ -326,19 +330,22 @@ aside, section, figure, figcaption, video {
     box-shadow: 2px 2px 10px var(--tonner-dark);
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact h2 {
-    background-color: #333333;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 12px;
+    border-bottom: 2px solid var(--tonner-light);
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5px;
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content img {
-    width: 100%;
+    width: 90%;
     margin: 8px;
     border: 1px solid red;
 }
+
 
 /* Site Footer: style rules */
 .site-footer {
