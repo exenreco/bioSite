@@ -98,7 +98,7 @@ aside, section, figure, figcaption, video {
 
 .site-header > .header-container .logo-area a img {
     display: block;
-    width: 92px;
+    width: 52px;
 }
 
 .site-header > .header-container .logo-area p.tagline {
@@ -141,7 +141,7 @@ aside, section, figure, figcaption, video {
 }
 
 .site-header > .header-container .nav-area ul li a {
-    font-family: 'Courier New', Courier, monospace;
+    /*font-family: 'Courier New', Courier, monospace;*/
     font-weight: bolder;
     text-decoration: none;
     font-size: 1.2em;
@@ -210,6 +210,7 @@ aside, section, figure, figcaption, video {
 /* Hero Other-page style rules */
 .content-area > .hero.page {
     position: relative;
+    text-align: center;
 }
 .content-area > .hero.page .hero-background {
     background: blueviolet;
