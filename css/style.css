@@ -1,9 +1,31 @@
 /* Variables */
 :root {
+
+    /* Device widths */
     --desktop-width: 1920px;
     --tablet-width: 1080px;
     --mobile-width: 620px;
-    --main-color: #fff;
+
+    /* Site Colors */
+    --primary-color: #007bff;
+    --secondary-primary-color: #ff9900;
+    --secondary-secondary-color: #34c759;
+    --accent-primary-color: #ff69b4;
+    --accent-secondary-color: #333333;
+
+    /* tonners */
+    --tonner-lightest: rgba(0, 0, 0, 0.2);
+    --tonner-light: rgba(0, 0, 0, 0.5);
+    --tonner-dark: rgba(0, 0, 0, 0.85);
+
+    /* washes */
+    --wash-lightest: rgba(255, 255, 255, 0.2);
+    --wash-light: rgba(255, 255, 255, 0.5);
+    --wash-dark: rgba(255, 255, 255, 0.85);
+
+    /* text colors */
+    --primary-text: rgba(255, 255, 255, 1);
+    --secondary-text: rgba( 33, 33, 33, 1);
 }
 
 
@@ -49,18 +71,16 @@ aside, section, figure, figcaption, video {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: red;
-    border-bottom: 0.5em solid orange;
+    background: var(--primary-color);
+    border-bottom: 0.5em solid var(--secondary-primary-color);
 }
 
 .site-header > .header-container {
     display: flex;
     flex-wrap: nowrap;
-    background: rgba(255, 255, 255, 0.3);
     padding: 5px;
     flex-direction: unset;
     overflow: hidden;
-    background-color: green;
     width: auto;
     max-width: var(--desktop-width);
     min-width: 25em;
@@ -70,7 +90,6 @@ aside, section, figure, figcaption, video {
 /* Site Logo: style rules for header logo */
 .site-header > .header-container .logo-area {
     width: 25em;
-    background-color: #333;
 }
 
 .site-header > .header-container .logo-area a {
@@ -83,7 +102,7 @@ aside, section, figure, figcaption, video {
 }
 
 .site-header > .header-container .logo-area p.tagline {
-    color: #fff;
+    color: var(--primary-text);
 }
 
 /* Site Navigation: style rules for header nav */
@@ -102,7 +121,6 @@ aside, section, figure, figcaption, video {
     justify-content: right;
     width: calc(100% - 25em);
     margin: auto;
-    background-color: bisque;
 }
 
 .site-header > .header-container .nav-area ul,
@@ -115,24 +133,21 @@ aside, section, figure, figcaption, video {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: auto;
-    background: blueviolet;
 }
 
 .site-header > .header-container .nav-area ul li {
     display: inline-block;
     margin: 12px;
-    background-color: #333;
 }
 
 .site-header > .header-container .nav-area ul li a {
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-weight: bolder;
     text-decoration: none;
     font-size: 1.2em;
 }
 
 /* navigation toggle */
-
 .site-header > .header-container .nav-area .mobile label {
     display: flex;
     flex: 1 1 auto;
@@ -142,17 +157,15 @@ aside, section, figure, figcaption, video {
     padding: 8px;
     margin: auto;
 }
-
 .site-header > .header-container .nav-area .mobile label input {
     display: none;
     visibility: hidden;
 }
-
 .site-header > .header-container .nav-area .mobile label i {
     font-size: 22.5pt;
     cursor: pointer;
     text-align: center;
-    color: #fff;
+    color: var(--primary-text);
 }
 
 
@@ -161,12 +174,11 @@ aside, section, figure, figcaption, video {
 .content-area {
     z-index: -1;
 }
-
 .content-area > .hero {
     background: blueviolet;
 }
 
-.content-area.front-page > .hero {
+.content-area.front-page > .hero.front-page {
     height: 100vh;
     display: flex;
     flex: 1 1 auto;
@@ -174,15 +186,28 @@ aside, section, figure, figcaption, video {
     flex-direction: unset;
     justify-content: center;
 }
-
-.content-area > .hero .hero-wrapper {
+.content-area > .hero.front-page .hero-wrapper {
     position: relative;
     display: inline-block;
-    background: red;
     margin: auto;
     width: auto;
     max-width: var(--desktop-width);
     min-width: 25em;
+}
+
+.content-area > .hero.page {
+    position: relative;
+}
+.content-area > .hero.page .hero-background {
+}
+.content-area > .hero.page .hero-wrapper {
+    width: auto;
+    margin: auto;
+    max-width: var(--desktop-width);
+    min-width: 25em;
+    padding: 5px;
+    padding-top: 12em;
+    padding-bottom: 0.2em;
 }
 
 
@@ -190,7 +215,6 @@ aside, section, figure, figcaption, video {
 .content-area {
     background-color: rgba(255, 255, 255, 0.3);
 }
-
 .content-area > .page-wrapper
 {
     width: auto;
@@ -208,13 +232,12 @@ aside, section, figure, figcaption, video {
 .site-footer {
     position: fixed;
     display: block;
-    background: red;
     width: 100%;
     margin: 0;
     bottom: 0;
-    border-top: 0.5em solid gold;
+    border-top: 0.5em solid var(--secondary-primary-color);
+    color: var(--primary-text)
 }
-
 .site-footer > .background {
     position: absolute;
     display: block;
@@ -225,32 +248,29 @@ aside, section, figure, figcaption, video {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: red;
+    background: var(--primary-color);
 }
+
 
 /* footer layout */
 .site-footer > .footer-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background: rgba(255, 255, 255, 0.3);
     width: auto;
     max-width: var(--desktop-width);
     min-width: 25em;
     margin: auto;
     padding: 5px;
 }
-
 .site-footer > .footer-container .contact-info,
 .site-footer > .footer-container .social-media,
 .site-footer > .footer-container .copyright {
     margin: auto;
     text-align: center;
 }
-
 .site-footer > .footer-container .contact-info {
     text-align: center;
 }
-
 .site-footer > .footer-container .social-media {
     margin: 0;
     display: flex;
@@ -258,35 +278,54 @@ aside, section, figure, figcaption, video {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    border-left: 0.5em solid rgba(0,0,0, 0.4);
-    border-right: 0.5em solid rgba(0,0,0, 0.4);
+    border-left: 0.2em solid rgba( 255, 255, 255, 0.4);
+    border-right: 0.2em solid rgba( 255, 255, 255, 0.4);
 }
 
 .site-footer > .footer-container .social-media ul {
     list-style-type: none;
 }
-
 .site-footer > .footer-container .social-media ul li {
     position: relative;
     display: flex;
     flex-direction: unset;
     justify-content: center;
     margin: 8px;
-    padding: 2%;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+    padding: 4px;
     display: inline-block;
     border-radius: 100%;
-    background-color: red;
-    border: 0.2em solid #fff;
+    border: 0.2em solid var(--primary-text);
     cursor: pointer;
 }
-
 .site-footer > .footer-container .social-media ul li  a {
     font-size: 14pt;
     display: block;
     margin: auto;
-    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.site-footer > .footer-container .social-media ul li  a i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 6.2px;
+}
+
+
+
+/* footer links */
+.site-footer a {
+    text-decoration: none;
+    color: var(--primary-text);
+}
+.site-footer a:hover,
+.site-footer > .footer-container .social-media ul li:hover:has( > a) {
+    color: var(--accent-primary-color);
+    border-color: var(--accent-primary-color);
 }
 
 
