@@ -337,13 +337,21 @@ ul, aside, section, figure, figcaption, video {
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     padding: 5px;
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content img {
-    width: 90%;
-    margin: 8px;
-    border: 1px solid red;
+    width: 95%;
+    margin: auto;
+    border: 2px solid var(--secondary-primary-color);
+}
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content p {
+    display: block;
+    width: 95%;
+    margin: auto;
+    margin-top: 12px;
+    line-height: 18pt;
+    font-weight: bold;
 }
 
 
@@ -383,20 +391,24 @@ ul, aside, section, figure, figcaption, video {
     padding: 5px;
     font-family: var(--typography-main);
 }
+.site-footer > .footer-container .copyright,
 .site-footer > .footer-container .contact-info,
-.site-footer > .footer-container .social-media,
-.site-footer > .footer-container .copyright {
+.site-footer > .footer-container .social-media {
     margin: auto;
-    text-align: center;
+}
+.site-footer > .footer-container .copyright a {
+    font-size: 18pt;
+    text-transform: uppercase;
 }
 .site-footer > .footer-container .contact-info {
-    text-align: center;
+    text-align: right;
 }
 .site-footer > .footer-container .social-media {
     margin: 0;
     display: flex;
     flex: 1 1 auto;
     flex-wrap: nowrap;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     border-left: 0.2em solid rgba( 255, 255, 255, 0.4);
@@ -443,24 +455,31 @@ ul, aside, section, figure, figcaption, video {
 }
 .site-footer a:hover,
 .site-footer > .footer-container .social-media ul li:hover:has( > a) {
-    color: var(--accent-primary-color);
-    border-color: var(--accent-primary-color);
+    color: var(--secondary-primary-color);
+    border-color: var(--secondary-primary-color);
 }
 
 
 /* Media Query for Desktop Viewport */
-@media only screen and (min-width: 1920px), print {
+@media only screen and (min-width: 1080px), print {
     
     /* navigation toggle */
     .site-header > .header-container .nav-area .mobile label {
         display: none;
         visibility: hidden;
     }
+
+    /* Fun Fact Page: Mobile style rules */
+    .content-area > .page-wrapper.fun-facts-page .fun-fact-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
 }
 
 
 /* Media Query for Tablet Viewport */
-@media only screen and (min-width: 180px), print {
+@media only screen and (max-width: 1080px), print {
     
     /* navigation toggle */
     .site-header > .header-container .nav-area .mobile label {
@@ -471,11 +490,18 @@ ul, aside, section, figure, figcaption, video {
     .site-header > .header-container .nav-area ul li a {
         font-size: 1.05em;
     }
+
+    /* Fun Fact Page: Mobile style rules */
+    .content-area > .page-wrapper.fun-facts-page .fun-fact-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+    }
 }
 
 
 /* Style rules to show mobile class */
-@media only screen and (max-width: 1080px), print {
+@media only screen and (max-width: 820px), print {
 
     /* navigation toggle */
     .site-header > .header-container .nav-area .mobile label {
@@ -536,6 +562,22 @@ ul, aside, section, figure, figcaption, video {
         visibility: visible;
     }
 
+    /* Content Wrapper: Mobile Style rules */
+    .content-area > .page-wrapper {
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Fun Fact Page: Mobile style rules */
+    .content-area > .page-wrapper.fun-facts-page .fun-fact-content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+    .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact {
+        margin: 12px;
+    }
+
 
     /* Site Footer: mobile style rules */
     .site-footer {
@@ -549,5 +591,10 @@ ul, aside, section, figure, figcaption, video {
         display: flex;
         flex: 1 1 auto;
         flex-direction: column-reverse;
+    }
+    .site-footer > .footer-container .copyright,
+    .site-footer > .footer-container .contact-info,
+    .site-footer > .footer-container .social-media {
+        text-align: center;
     }
 }
