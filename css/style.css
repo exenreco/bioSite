@@ -88,6 +88,15 @@ input, label {
 }
 
 
+/* required marker */
+.required {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--invalid);
+}
+
+
+
 
 /* Site Header: header style rules */
 .site-header {
@@ -288,6 +297,8 @@ input, label {
 .content-area > .hero.page {
     position: relative;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
 }
 .content-area > .hero.page .hero-background {
     background: var(--primary-color);
@@ -327,7 +338,36 @@ input, label {
     padding-top: 2.5em;
 }
 
-/* FUN FACT: Style rules */
+
+
+/* ABOUT PAGE: style rules */
+.content-area > .page-wrapper.about-page .about-content {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.content-area > .page-wrapper.about-page .about-content h2 {
+    text-transform: uppercase;
+}
+.content-area > .page-wrapper.about-page .about-content p {
+    text-indent: 18pt;
+    margin-bottom: 2em;
+}
+.content-area > .page-wrapper.about-page .about-content img {
+    position: relative;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    width: auto;
+    max-width: 75%;
+    min-width: 25%;
+    border: 0.4em solid var(--tonner-light);
+    box-shadow: 2px 2px 6px var(--tonner-dark);
+}
+
+
+
+/* FUN FACT PAGE: Style rules */
 .content-area > .page-wrapper.fun-facts-page h2.heading {
     margin: 32px;
     text-align: center;
@@ -367,15 +407,10 @@ input, label {
     margin-top: 12px;
 }
 
-/* required marker */
-.required {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--invalid);
-}
 
 
-/* Contact Page: Style rules for form elements */
+
+/* CONTACT PAGE: Style rules */
 .page-wrapper .contact-personal,
 .page-wrapper .form {
     width: 80%;
@@ -444,7 +479,6 @@ input, label {
     padding: 8px;
     color: var(--tonner-dark)
 }
-
 .page-wrapper .form fieldset .form-section.dual {
     position: relative;
     display: grid;
