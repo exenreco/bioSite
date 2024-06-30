@@ -6,6 +6,16 @@
     --tablet-width: 1080px;
     --mobile-width: 620px;
 
+    /* content widths */
+    --content-width-desktop: 75%;
+    --content-width-tablet: 85%;
+    --content-width-mobile: 98%;
+
+    /* System Colors */
+    --warn: rgb(255, 115, 0);
+    --valid: rgb(0, 255, 0);
+    --invalid: rgb(255, 0, 0);
+
     /* Site Colors */
     --primary-color: #007bff;
     --secondary-primary-color: #ff9900;
@@ -26,12 +36,7 @@
     /* text colors */
     --primary-text: rgba(255, 255, 255, 1);
     --secondary-text: rgba( 33, 33, 33, 1);
-
-    /* System Colors */
-    --warn: rgb(255, 115, 0);
-    --valid: rgb(0, 255, 0);
-    --invalid: rgb(255, 0, 0);
-
+    
     /* typography */
     --typography-main: Arial, Helvetica, sans-serif;
 }
@@ -63,7 +68,7 @@
 }
 
 
-/* CSS Reset */
+/* RESET CSS: reset default style rules */
 body, header, nav, main, footer, img, h1, h2, h3, h4, h5, h6,
 ul, span, aside, section, figure, figcaption, video, textarea,
 input, label {
@@ -88,7 +93,8 @@ input, label {
 }
 
 
-/* required marker */
+
+/* REUSEABLE: Required field marker */
 .required {
     font-size: 1.2em;
     font-weight: bold;
@@ -97,8 +103,7 @@ input, label {
 
 
 
-
-/* Site Header: header style rules */
+/* SITE HEADER GENERAL: style rules */
 .site-header {
     position: fixed;
     font-family: var(--typography-main);
@@ -137,7 +142,8 @@ input, label {
 }
 
 
-/* Site Logo: style rules for header logo */
+
+/* HEADER LOGO GENERAL: style rules */
 .site-header > .header-container .logo-area {
     width: 25em;
 }
@@ -153,7 +159,8 @@ input, label {
 }
 
 
-/* Site Navigation: style rules for header nav */
+
+/* HEADER NAVIGATION GENERAL: style rules for header nav */
 .site-header > .header-container .nav-area {
     display: flex;
     flex-wrap: wrap;
@@ -196,7 +203,7 @@ input, label {
 }
 
 
-/* navigation toggle */
+/* HEADER NAVIGATION TOGGLE GENERAL: style rules for header nav toggle */
 .site-header > .header-container .nav-area .mobile label {
     display: flex;
     flex: 1 1 auto;
@@ -344,6 +351,7 @@ input, label {
 .content-area > .page-wrapper.about-page .about-content {
     margin: auto;
     display: grid;
+    width: var(--content-width-desktop);
     grid-template-columns: repeat(2, 1fr);
 }
 .content-area > .page-wrapper.about-page .about-content h2 {
@@ -368,13 +376,14 @@ input, label {
 
 
 /* FUN FACT PAGE: Style rules */
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content {
+    display: grid;
+    width: var(--content-width-desktop);
+    grid-template-columns: repeat(3, 1fr);
+}
 .content-area > .page-wrapper.fun-facts-page h2.heading {
     margin: 32px;
     text-align: center;
-}
-.content-area > .page-wrapper.fun-facts-page .fun-fact-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
 }
 .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact {
     border-radius: 8px;
@@ -409,35 +418,38 @@ input, label {
 
 
 
-
 /* CONTACT PAGE: Style rules */
-.page-wrapper .contact-personal,
-.page-wrapper .form {
+.content-area > .page-wrapper.contact-page .contact-content {
+    width: var(--content-width-desktop);
+    margin: auto;
+}
+.content-area > .page-wrapper.contact-page .contact-content .contact-personal,
+.content-area > .page-wrapper.contact-page .contact-content .form {
     width: 80%;
     margin: auto;
 }
-.page-wrapper .contact-personal h3 {
+.content-area > .page-wrapper.contact-page .contact-content .contact-personal h3 {
     text-transform: uppercase;
 }
-.page-wrapper .contact-personal .special {
+.content-area > .page-wrapper.contact-page .contact-content .contact-personal .special {
     text-align: center;
     color: var(--tonner-light);
     margin: 2em 0em 2em 0em;
 }
-.page-wrapper .contact-personal .option {
+.content-area > .page-wrapper.contact-page .contact-content .contact-personal .option {
     display: block;
     line-height: 28pt;
 }
-.page-wrapper .form fieldset legend {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset legend {
     font-size: 1.25em;
     font-weight: bold;
 }
-.page-wrapper .form fieldset {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset {
     margin-top: 24px;
     border-radius: 0.5em;
     border: 2px solid var(--tonner-lightest);
 }
-.page-wrapper .form fieldset label {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset label {
     display: block;
     padding-top: 2%;
     margin-bottom: 0.5em;
@@ -445,15 +457,15 @@ input, label {
     text-transform: uppercase;
     color: var(--tonner-dark)
 }
-.page-wrapper .form input,
-.page-wrapper .form textarea {
+.content-area > .page-wrapper.contact-page .contact-content .form input,
+.content-area > .page-wrapper.contact-page .contact-content .form textarea {
     margin: auto;
     font-family: var(--typography-main);
     font-size: 1.2em;
     border: 2px solid var(--tonner-lightest);
     border-radius: 0.5em;
 }
-.page-wrapper .form textarea {
+.content-area > .page-wrapper.contact-page .contact-content .form textarea {
     padding: 5px;
     position: relative;
     display: inline-block;
@@ -462,34 +474,34 @@ input, label {
     margin: auto;
     width: calc(100% - 14px);
 }
-.page-wrapper .form input:hover,
-.page-wrapper .form textarea:hover,
-.page-wrapper .form input:focus,
-.page-wrapper .form textarea:focus {
+.content-area > .page-wrapper.contact-page .contact-content .form input:hover,
+.content-area > .page-wrapper.contact-page .contact-content .form textarea:hover,
+.content-area > .page-wrapper.contact-page .contact-content .form input:focus,
+.content-area > .page-wrapper.contact-page .contact-content .form textarea:focus {
     border-color: var(--primary-color);
 }
-.page-wrapper .form fieldset .form-section {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset .form-section {
     margin-bottom: 1em;
 }
-.page-wrapper .form fieldset .form-section .field {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset .form-section .field {
     margin-bottom: 1em;
 }
-.page-wrapper .form fieldset .form-section .field input {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset .form-section .field input {
     width: 90%;
     padding: 8px;
     color: var(--tonner-dark)
 }
-.page-wrapper .form fieldset .form-section.dual {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset .form-section.dual {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.page-wrapper .form fieldset .form-section.dual .field {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset .form-section.dual .field {
     position: relative;
     display: block;
     width: 100%;
 }
-.page-wrapper .form fieldset .form-section.single .field {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset .form-section.single .field {
     position: relative;
     display: flex;
     flex: 1 1 auto;
@@ -497,11 +509,11 @@ input, label {
     flex-wrap: nowrap;
     justify-content: center;
 }
-.page-wrapper .form fieldset .form-section.full-width .field input {
+.content-area > .page-wrapper.contact-page .contact-content .form fieldset .form-section.full-width .field input {
     margin: auto;
     width: calc(100% - 1.4em);
 }
-.page-wrapper .form #submit {
+.content-area > .page-wrapper.contact-page .contact-content .form #submit {
     display: block;
     padding: 10px;
     width: 18em;
@@ -517,7 +529,7 @@ input, label {
     transition: all 500ms ease-in-out;
     cursor: pointer;
 }
-.page-wrapper .form #submit:hover {
+.content-area > .page-wrapper.contact-page .contact-content .form #submit:hover {
     background-color: var(--accent-secondary-color);
     color: var(--secondary-primary-color);
     transition: all 500ms ease-in-out;
