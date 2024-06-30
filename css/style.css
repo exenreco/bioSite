@@ -27,6 +27,11 @@
     --primary-text: rgba(255, 255, 255, 1);
     --secondary-text: rgba( 33, 33, 33, 1);
 
+    /* System Colors */
+    --warn: rgb(255, 115, 0);
+    --valid: rgb(0, 255, 0);
+    --invalid: rgb(255, 0, 0);
+
     /* typography */
     --typography-main: Arial, Helvetica, sans-serif;
 }
@@ -60,25 +65,29 @@
 
 /* CSS Reset */
 body, header, nav, main, footer, img, h1, h2, h3, h4, h5, h6,
-ul, aside, section, figure, figcaption, video {
+ul, span, aside, section, figure, figcaption, video, textarea,
+input, label {
+    /* margin reset */
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
     margin: 0;
-    
+    /* padding reset */
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
     padding: 0;
-
+    /* border reset */
     border-top: 0;
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
     border: 0;
 }
+
+
 
 /* Site Header: header style rules */
 .site-header {
@@ -302,6 +311,10 @@ ul, aside, section, figure, figcaption, video {
 .content-area {
     background-color: rgba(255, 255, 255, 0.3);
 }
+.content-area p {
+    font-size: 16pt;
+    line-height: 22pt;
+}
 .content-area > .page-wrapper
 {
     width: auto;
@@ -311,6 +324,7 @@ ul, aside, section, figure, figcaption, video {
     padding: 5px;
     background-color: whitesmoke;
     padding-bottom: 8%;
+    padding-top: 2.5em;
 }
 
 /* FUN FACT: Style rules */
@@ -349,9 +363,130 @@ ul, aside, section, figure, figcaption, video {
     display: block;
     width: 95%;
     margin: auto;
+    padding: 1em;
     margin-top: 12px;
-    line-height: 18pt;
+}
+
+/* required marker */
+.required {
+    font-size: 1.2em;
     font-weight: bold;
+    color: var(--invalid);
+}
+
+
+/* Contact Page: Style rules for form elements */
+.page-wrapper .contact-personal,
+.page-wrapper .form {
+    width: 80%;
+    margin: auto;
+}
+.page-wrapper .contact-personal h3 {
+    text-transform: uppercase;
+}
+.page-wrapper .contact-personal .special {
+    text-align: center;
+    color: var(--tonner-light);
+    margin: 2em 0em 2em 0em;
+}
+.page-wrapper .contact-personal .option {
+    display: block;
+    line-height: 28pt;
+}
+.page-wrapper .form fieldset legend {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.page-wrapper .form fieldset {
+    margin-top: 24px;
+    border-radius: 0.5em;
+    border: 2px solid var(--tonner-lightest);
+}
+.page-wrapper .form fieldset label {
+    display: block;
+    padding-top: 2%;
+    margin-bottom: 0.5em;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--tonner-dark)
+}
+.page-wrapper .form input,
+.page-wrapper .form textarea {
+    margin: auto;
+    font-family: var(--typography-main);
+    font-size: 1.2em;
+    border: 2px solid var(--tonner-lightest);
+    border-radius: 0.5em;
+}
+.page-wrapper .form textarea {
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 14em;
+    margin: auto;
+    width: calc(100% - 14px);
+}
+.page-wrapper .form input:hover,
+.page-wrapper .form textarea:hover,
+.page-wrapper .form input:focus,
+.page-wrapper .form textarea:focus {
+    border-color: var(--primary-color);
+}
+.page-wrapper .form fieldset .form-section {
+    margin-bottom: 1em;
+}
+.page-wrapper .form fieldset .form-section .field {
+    margin-bottom: 1em;
+}
+.page-wrapper .form fieldset .form-section .field input {
+    width: 90%;
+    padding: 8px;
+    color: var(--tonner-dark)
+}
+
+.page-wrapper .form fieldset .form-section.dual {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.page-wrapper .form fieldset .form-section.dual .field {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.page-wrapper .form fieldset .form-section.single .field {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.page-wrapper .form fieldset .form-section.full-width .field input {
+    margin: auto;
+    width: calc(100% - 1.4em);
+}
+.page-wrapper .form #submit {
+    display: block;
+    padding: 10px;
+    width: 18em;
+    margin: auto;
+    margin-top: 2em;
+    font-size: 18pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid var(--tonner-lightest);
+    color: var(--tonner-dark);
+    border-radius: 8px;
+    background: var(--secondary-primary-color);
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+.page-wrapper .form #submit:hover {
+    background-color: var(--accent-secondary-color);
+    color: var(--secondary-primary-color);
+    transition: all 500ms ease-in-out;
 }
 
 
@@ -486,16 +621,42 @@ ul, aside, section, figure, figcaption, video {
         display: none;
         visibility: hidden;
     }
-
     .site-header > .header-container .nav-area ul li a {
         font-size: 1.05em;
     }
 
-    /* Fun Fact Page: Mobile style rules */
+    /* Content Wrapper: Tablet Style rules */
+    .content-area > .page-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Fun Fact Page: Tablet style rules */
     .content-area > .page-wrapper.fun-facts-page .fun-fact-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin: auto;
+    }
+
+    /* Site Footer: Tablet style rules */
+    .site-footer {
+        position: relative;
+        display: block;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+    .site-footer > .footer-container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column-reverse;
+    }
+    .site-footer > .footer-container .copyright,
+    .site-footer > .footer-container .contact-info,
+    .site-footer > .footer-container .social-media {
+        text-align: center;
     }
 }
 
@@ -564,7 +725,9 @@ ul, aside, section, figure, figcaption, video {
 
     /* Content Wrapper: Mobile Style rules */
     .content-area > .page-wrapper {
-        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
         width: 100%;
     }
 
@@ -577,6 +740,25 @@ ul, aside, section, figure, figcaption, video {
     .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact {
         margin: 12px;
     }
+
+    /* Page Hero: style rules */
+    .content-area > .hero.page {
+        text-align: center;
+    }
+
+    /* Contact Page: Mobile style rules */
+    .page-wrapper .contact-personal, .page-wrapper .form {
+        width: auto;
+        padding: 10px;
+        max-width: 98%;
+    }
+    .page-wrapper .contact-personal h3 {
+        text-align: center;
+    }
+    .page-wrapper .form fieldset .form-section.dual {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
 
 
     /* Site Footer: mobile style rules */
