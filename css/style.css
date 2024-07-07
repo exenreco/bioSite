@@ -374,50 +374,6 @@ input, label {
 }
 
 
-
-/* FUN FACT PAGE: Style rules */
-.content-area > .page-wrapper.fun-facts-page .fun-fact-content {
-    display: grid;
-    width: var(--content-width-desktop);
-    grid-template-columns: repeat(3, 1fr);
-}
-.content-area > .page-wrapper.fun-facts-page h2.heading {
-    margin: 32px;
-    text-align: center;
-}
-.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact {
-    border-radius: 8px;
-    background: var(--wash-dark);
-    border: 2px solid var(--primary-color);
-    margin: 14px;
-    box-shadow: 2px 2px 10px var(--tonner-dark);
-}
-.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact h2 {
-    margin-left: 8px;
-    margin-right: 8px;
-    padding: 12px;
-    border-bottom: 2px solid var(--tonner-light);
-}
-.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    padding: 5px;
-}
-.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content img {
-    width: 95%;
-    margin: auto;
-    border: 2px solid var(--secondary-primary-color);
-}
-.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content p {
-    display: block;
-    width: 95%;
-    margin: auto;
-    padding: 1em;
-    margin-top: 12px;
-}
-
-
-
 /* CONTACT PAGE: Style rules */
 .content-area > .page-wrapper.contact-page .contact-content {
     width: var(--content-width-desktop);
@@ -534,6 +490,153 @@ input, label {
     color: var(--secondary-primary-color);
     transition: all 500ms ease-in-out;
 }
+
+
+/* FUN FACT PAGE: Style rules */
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content {
+    display: grid;
+    width: var(--content-width-desktop);
+    grid-template-columns: repeat(3, 1fr);
+}
+.content-area > .page-wrapper.fun-facts-page h2.heading {
+    margin: 32px;
+    text-align: center;
+}
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact {
+    border-radius: 8px;
+    background: var(--wash-dark);
+    border: 2px solid var(--primary-color);
+    margin: 14px;
+    box-shadow: 2px 2px 10px var(--tonner-dark);
+}
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact h2 {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 12px;
+    border-bottom: 2px solid var(--tonner-light);
+}
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 5px;
+}
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content img {
+    width: 95%;
+    margin: auto;
+    border: 2px solid var(--secondary-primary-color);
+}
+.content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact .content p {
+    display: block;
+    width: 95%;
+    margin: auto;
+    padding: 1em;
+    margin-top: 12px;
+}
+
+
+/* SPOTLIGHT PAGE: Style rules */
+.content-area > .page-wrapper.spotlight-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper {
+    width: inherit;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 100vh;
+    padding: 5px;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item.item-1 {
+    background: var(--primary-color);
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item.item-2 {
+    background: var(--secondary-primary-color);
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item.item-3 {
+    background: var(--tonner-dark);
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item.item-4 {
+    background: var(--secondary-secondary-color);
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item.item-5 {
+    background: var(--primary-color);
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--tonner-lightest);
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    max-width: var(--tablet-width);
+    min-width: 25em;
+    background-color: aquamarine;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .fig,
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .summary {
+    position: relative;
+    display: block;
+    padding: 12px;
+    width: calc(100% - 24px);
+    margin: 0;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .fig {
+    /*border: 2px solid #3333;*/
+    background-color: #007bff;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .fig img,
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .fig figcaption {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .summary {
+    color: var(--wash-dark);
+    text-align: left;
+    background-color: #34c759;
+    width: 100%;
+    /* grid-column: 1 / span 2; */
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .summary h2 {
+    text-transform: uppercase;
+}
+.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .summary button {
+    position: relative;
+    display: block;
+    width: 80%;
+    border-radius: 5px;
+    padding: 12px;
+    margin: auto;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 18pt;
+    cursor: pointer;
+    background: var(--secondary-primary-color);
+    color: var(--tonner-dark);
+    border: 2px solid var(--tonner-light);
+}
+
+
 
 
 /* Site Footer: style rules */
