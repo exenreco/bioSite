@@ -71,7 +71,7 @@
 /* RESET CSS: reset default style rules */
 body, header, nav, main, footer, img, h1, h2, h3, h4, h5, h6,
 ul, span, aside, section, figure, figcaption, video, textarea,
-input, label {
+input, label, button {
     /* margin reset */
     margin-top: 0;
     margin-left: 0;
@@ -95,10 +95,48 @@ input, label {
 
 
 /* REUSEABLE: Required field marker */
+
+/* style rules for required form fields */
 .required {
     font-size: 1.2em;
     font-weight: bold;
     color: var(--invalid);
+}
+
+/* style rules for button classes */
+button, .primary-button, .secondary-button {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14pt;
+    border-radius: 5px;
+    border: 2px solid var(--tonner-light);
+    padding: 12px;
+    width: 98%;
+    margin: auto;
+    cursor: pointer;
+    transition: "background-color" 500ms ease-in;
+    transition: "border-color" 500ms ease-in;
+    text-transform: uppercase;
+    color: var(--wash-dark);
+    background-color: var(--accent-secondary-color);
+}
+.primary-button {
+    color: var(--tonner-dark) !important;
+    background-color: var(--primary-color);
+}
+.secondary-button {
+    color: var(--accent-secondary-color);
+    background-color: var(--secondary-primary-color);
+}
+button:hover,
+.primary-button:hover,
+.secondary-button:hover {
+    color: var(--tonner-dark);
+    border-color: var(--tonner-light);
+    background-color: var(--wash-dark);
+    transition: "background-color" 500ms ease-out;
+    transition: "border-color" 500ms ease-out;
 }
 
 
@@ -262,28 +300,30 @@ input, label {
     margin: auto;
     width: auto;
     max-width: var(--desktop-width);
+    min-width: var(--desktop-width);
     text-align: center;
+    background-color: #ff69b4;
 }
-.content-area > .hero.front-page .hero-wrapper button.primary,
-.content-area > .hero.front-page .hero-wrapper button.secondary {
-    display: inline-block;
-    padding: 10px;
-    padding-left: 32px;
-    padding-right: 32px;
-    font-weight: bold;
-    font-size: 1.2em;
-    border-radius: 8px;
-    margin: 12px;
-    cursor: pointer;
-}
+
 .content-area > .hero.front-page .hero-wrapper .button_wrapper {
+    position: relative;
+    display: block;
     margin-top: 5em;
+    display: grid;
+    max-width: var(--tablet-width);
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    background-color: #007bff;
 }
-.content-area > .hero.front-page .hero-wrapper button.primary {
-    background-color: var(--secondary-primary-color);
-    color: var(--accent-secondary-color);
+.content-area > .hero.front-page .hero-wrapper .button_wrapper .primary-button,
+.content-area > .hero.front-page .hero-wrapper .button_wrapper .secondary-button {
+    display: block;
+    position: relative;
 }
-.content-area > .hero.front-page .hero-wrapper button.secondary {
+.content-area > .hero.front-page .hero-wrapper .button_wrapper .primary-button {
+}
+.content-area > .hero.front-page .hero-wrapper .button_wrapper .secondary-button {
     animation: shake 2.5s infinite;
 }
 .content-area > .hero.front-page .hero-wrapper .scroll-indicator {
@@ -375,18 +415,14 @@ input, label {
     margin: 5px;
     display: inline-block;
     height: inherit;
-    background: red;
 }
 /* homepage about area style rules */
 .content-area > .page-wrapper.front-page .home-section {
-    background:var(--primary-color);
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
     border-radius: 05px;
     /*margin-bottom: 12px;*/
-}
-.content-area > .page-wrapper.front-page .home-section h2{
-    padding: 5px;
-    max-width: var(--tablet-width);
-    margin: auto;
 }
 .content-area > .page-wrapper.front-page .home-section .content {
     max-width: var(--tablet-width);
@@ -395,17 +431,9 @@ input, label {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    background: red;
-    min-height: 40vh;
     margin: auto;
+    height: auto;
     padding: 5px;
-}
-.content-area > .page-wrapper.front-page .home-section .content img {
-    border-radius: 5px;
-    margin: 12px;
-}
-.content-area > .page-wrapper.front-page .home-section .content p {
-    background-color: #007bff;
 }
 .content-area > .page-wrapper.front-page .home-section.spotlight {
     background-color: var(--primary-color);
@@ -414,10 +442,36 @@ input, label {
     color: var(--wash-dark);
     background-color: var(--tonner-dark);
 }
-.content-area > .page-wrapper.front-page .home-section.closing {
+.content-area > .page-wrapper.front-page .home-section.hobbies {
     color: var(--wash-dark);
     background-color: var(--secondary-secondary-color);
 }
+.content-area > .page-wrapper.front-page .home-section .content img,
+.content-area > .page-wrapper.front-page .home-section .content .container {
+    position: relative;
+    display: inline-block;
+}
+.content-area > .page-wrapper.front-page .home-section .content .container {
+    height: auto;
+}
+.content-area > .page-wrapper.front-page .home-section .content .container h2 {
+    padding: 5px;
+    max-width: var(--tablet-width);
+    margin: auto;
+    font-size: 22pt;
+    text-transform: uppercase;
+}
+.content-area > .page-wrapper.front-page .home-section .content .container p {
+    font-size: 18pt;
+}
+.content-area > .page-wrapper.front-page .home-section .content img {
+    position: relative;
+    border-radius: 5px;
+    margin: 12px;
+    height: auto;
+    width: 35%;
+}
+
 
 
 
@@ -545,24 +599,8 @@ input, label {
 }
 .content-area > .page-wrapper.contact-page .contact-content .form #submit {
     display: block;
-    padding: 10px;
-    width: 18em;
     margin: auto;
     margin-top: 2em;
-    font-size: 18pt;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: 2px solid var(--tonner-lightest);
-    color: var(--tonner-dark);
-    border-radius: 8px;
-    background: var(--secondary-primary-color);
-    transition: all 500ms ease-in-out;
-    cursor: pointer;
-}
-.content-area > .page-wrapper.contact-page .contact-content .form #submit:hover {
-    background-color: var(--accent-secondary-color);
-    color: var(--secondary-primary-color);
-    transition: all 500ms ease-in-out;
 }
 
 
@@ -693,21 +731,6 @@ input, label {
 }
 .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .summary h2 {
     text-transform: uppercase;
-}
-.content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-item .content .summary button {
-    position: relative;
-    display: block;
-    width: 80%;
-    border-radius: 5px;
-    padding: 12px;
-    margin: auto;
-    font-weight: bolder;
-    text-transform: uppercase;
-    font-size: 18pt;
-    cursor: pointer;
-    background: var(--secondary-primary-color);
-    color: var(--tonner-dark);
-    border: 2px solid var(--tonner-light);
 }
 
 
