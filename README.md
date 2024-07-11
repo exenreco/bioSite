@@ -1,8 +1,21 @@
-# BioSite Website Plan
+# Exnreco BioSite
 
-<h2>
-    <b>Student:</b> Exenreco Bell
-</h2>
+
+<h2><b>Student: </b>Exenreco Bell</h2>
+<h2><b>Project: </b>BioSite</h2>
+<h2><b>Class: </b>Web 200</h2>
+
+
+<br><br>
+
+<figure>
+    <img src="./images/screenshot.png">
+    <figcaption>Screenshot of BioSite</figcaption>
+</figure>
+
+<br><br>
+
+# BioSite Website Plan
 
 <h3>Ideas for your website</h3>
 <p>
