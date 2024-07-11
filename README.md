@@ -1,10 +1,10 @@
 # Exnreco BioSite
 
-
-<h2><b>Student: </b>Exenreco Bell</h2>
-<h2><b>Project: </b>BioSite</h2>
-<h2><b>Class: </b>Web 200</h2>
-
+<ul>
+    <li><b>Student: </b>Exenreco Bell</li>
+    <li><b>Project: </b>BioSite</li>
+    <li><b>Class: </b>Web 200</li>
+</ul>
 
 <br><br>
 
