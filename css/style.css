@@ -347,6 +347,80 @@ input, label {
 
 
 
+/* HOME PAGE: style rules */
+.content-area > .page-wrapper.front-page {
+}
+.content-area > .page-wrapper.front-page .home-section {
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight {
+    background-color: var(--tonner-lightest);
+    border-radius: 0.5em;
+}
+/* homepage spotlight area style rules */
+.content-area > .page-wrapper.front-page .home-section.spotlight h2 {
+    padding: 8px;
+    margin-bottom: 05px;
+    border-bottom: 2px solid var(--tonner-dark);
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 5px;
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-content .spotlight-item {
+    margin: 5px;
+    display: inline-block;
+    height: inherit;
+    background: red;
+}
+/* homepage about area style rules */
+.content-area > .page-wrapper.front-page .home-section {
+    background:var(--primary-color);
+    border-radius: 05px;
+    /*margin-bottom: 12px;*/
+}
+.content-area > .page-wrapper.front-page .home-section h2{
+    padding: 5px;
+    max-width: var(--tablet-width);
+    margin: auto;
+}
+.content-area > .page-wrapper.front-page .home-section .content {
+    max-width: var(--tablet-width);
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background: red;
+    min-height: 40vh;
+    margin: auto;
+    padding: 5px;
+}
+.content-area > .page-wrapper.front-page .home-section .content img {
+    border-radius: 5px;
+    margin: 12px;
+}
+.content-area > .page-wrapper.front-page .home-section .content p {
+    background-color: #007bff;
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight {
+    background-color: var(--primary-color);
+}
+.content-area > .page-wrapper.front-page .home-section.about {
+    color: var(--wash-dark);
+    background-color: var(--tonner-dark);
+}
+.content-area > .page-wrapper.front-page .home-section.closing {
+    color: var(--wash-dark);
+    background-color: var(--secondary-secondary-color);
+}
+
+
+
 /* ABOUT PAGE: style rules */
 .content-area > .page-wrapper.about-page .about-content {
     margin: auto;
