@@ -126,15 +126,21 @@
     <figcaption>Sketch of the home-page wire-frame.</figcaption>
 </figure>
 
+<br><br>
+
 <figure>
     <img src="./images/wire-frame-about-page.png">
     <figcaption>Sketch of the about-page wire-frame.</figcaption>
 </figure>
 
+<br><br>
+
 <figure>
     <img src="./images/wire-frame-hobby-page.png">
     <figcaption>Sketch of the hobby-page wire-frame.</figcaption>
 </figure>
+
+<br><br>
 
 # Site Map
 
