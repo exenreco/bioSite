@@ -104,7 +104,10 @@ input, label, button {
 }
 
 /* style rules for button classes */
-button, .primary-button, .secondary-button {
+button,
+.default-button,
+.primary-button,
+.secondary-button {
     position: relative;
     display: inline-block;
     font-weight: bold;
@@ -130,6 +133,7 @@ button, .primary-button, .secondary-button {
     background-color: var(--secondary-primary-color);
 }
 button:hover,
+.default-button:hover,
 .primary-button:hover,
 .secondary-button:hover {
     color: var(--tonner-dark);
@@ -440,11 +444,18 @@ button:hover,
 }
 .content-area > .page-wrapper.front-page .home-section.about {
     color: var(--wash-dark);
-    background-color: var(--tonner-dark);
+    background-color: var(--accent-primary-color);
 }
 .content-area > .page-wrapper.front-page .home-section.hobbies {
     color: var(--wash-dark);
     background-color: var(--secondary-secondary-color);
+}
+.content-area > .page-wrapper.front-page .home-section.quote {
+    min-height: 20vh;
+}
+.content-area > .page-wrapper.front-page .home-section.fun-facts {
+    color: var(--wash-dark);
+    background-color: var(--accent-secondary-color);
 }
 .content-area > .page-wrapper.front-page .home-section .content img,
 .content-area > .page-wrapper.front-page .home-section .content .container {
