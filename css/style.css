@@ -125,7 +125,7 @@ button,
     background-color: var(--accent-secondary-color);
 }
 .primary-button {
-    color: var(--tonner-dark) !important;
+    color: var(--wash-dark);
     background-color: var(--primary-color);
 }
 .secondary-button {
@@ -295,8 +295,10 @@ button:hover,
     justify-content: center;
 }
 .content-area > .hero.front-page .hero-background {
-    background: var(--primary-color);
-    opacity: 0.2;
+    filter: blur(8px);
+    background-color: var(--accent-secondary-color);
+    background: url(../images/home-page-image.jpg);
+    opacity: 1;
 }
 .content-area > .hero.front-page .hero-wrapper {
     position: relative;
@@ -393,40 +395,18 @@ button:hover,
 
 /* HOME PAGE: style rules */
 .content-area > .page-wrapper.front-page {
+    max-width: 100%;
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 8%;
 }
 .content-area > .page-wrapper.front-page .home-section {
-}
-.content-area > .page-wrapper.front-page .home-section.spotlight {
-    background-color: var(--tonner-lightest);
-    border-radius: 0.5em;
-}
-/* homepage spotlight area style rules */
-.content-area > .page-wrapper.front-page .home-section.spotlight h2 {
-    padding: 8px;
-    margin-bottom: 05px;
-    border-bottom: 2px solid var(--tonner-dark);
-}
-.content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-content {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: row;
-    overflow: hidden;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 5px;
-}
-.content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-content .spotlight-item {
-    margin: 5px;
-    display: inline-block;
-    height: inherit;
 }
 /* homepage about area style rules */
 .content-area > .page-wrapper.front-page .home-section {
     display: flex;
     justify-content: center;
     min-height: 80vh;
-    border-radius: 05px;
-    /*margin-bottom: 12px;*/
 }
 .content-area > .page-wrapper.front-page .home-section .content {
     max-width: var(--tablet-width);
@@ -439,8 +419,57 @@ button:hover,
     height: auto;
     padding: 5px;
 }
+/* homepage spotlight area style rules */
 .content-area > .page-wrapper.front-page .home-section.spotlight {
+    display: block;
+    position: relative;
+    min-height: 65vh;
+    padding: 5px;
     background-color: var(--primary-color);
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight h2 {
+    padding: 5px;
+    font-size: 22pt;
+    margin-bottom: 05px;
+    max-width: var(--desktop-width);
+    min-width: var(--desktop-width);
+    margin: auto;
+    margin-bottom: 12px;
+    color: var(--wash-dark);
+    text-transform: uppercase;
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight .content {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: left;
+    width: auto;
+    max-width: var(--desktop-width);
+    min-width: var(--desktop-width);
+    height: auto;
+    max-height: 50vh;
+    min-height: 50vh;
+    overflow: hidden;
+    overflow-x: auto;
+    list-style-type: none;
+    color: var(--wash-dark);
+    border: 4px solid var(--wash-lightest);
+    border-radius: 5px;
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight .content .spotlight-item {
+    background-color: var(--accent-secondary-color);
+    position: relative;
+    display: inline-block;
+    width: auto;
+    max-width: 25em;
+    min-width: 25em;
+    height: auto;
+    max-height: 100%;
+    min-height: 100%;
+    margin: 15px;
+    border-radius: 5px;
+    border: 2px solid var(--wash-light);
 }
 .content-area > .page-wrapper.front-page .home-section.about {
     color: var(--wash-dark);
@@ -456,6 +485,10 @@ button:hover,
 .content-area > .page-wrapper.front-page .home-section.fun-facts {
     color: var(--wash-dark);
     background-color: var(--accent-secondary-color);
+}
+.content-area > .page-wrapper.front-page .home-section.contact {
+    text-align: center;
+    min-height: 20vh;
 }
 .content-area > .page-wrapper.front-page .home-section .content img,
 .content-area > .page-wrapper.front-page .home-section .content .container {
