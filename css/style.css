@@ -193,6 +193,7 @@ button:hover,
     width: 100%;
     height: 100%;
     margin: auto;
+    z-index: 2;
 }
 .popup-module .popup-overlay {
     position: absolute;
@@ -592,7 +593,8 @@ button:hover,
     padding: 5px;
     background-color: var(--primary-color);
 }
-.content-area > .page-wrapper.front-page .home-section.spotlight h2 {
+.content-area > .page-wrapper.front-page .home-section.spotlight h2,
+.content-area > .page-wrapper.front-page .home-section.spotlight h4 {
     padding: 5px;
     font-size: 22pt;
     margin-bottom: 05px;
@@ -601,6 +603,9 @@ button:hover,
     margin-bottom: 12px;
     color: var(--wash-dark);
     text-transform: uppercase;
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight h4 {
+    font-size: 1.2em;
 }
 .content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-items {
     position: relative;
@@ -625,10 +630,11 @@ button:hover,
 .content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-items .spotlight-item {
     background-color: var(--accent-secondary-color);
     position: relative;
-    display: block;
-    width: 25em;
-    max-width: 25em;
-    min-width: 25em;
+    display: flex;
+    justify-content: center;
+    width: 24em;
+    max-width: 24em;
+    min-width: 24em;
     height: auto;
     max-height: 100%;
     min-height: 100%;
@@ -636,6 +642,20 @@ button:hover,
     border-radius: 5px;
     border: 2px solid var(--wash-light);
     cursor: pointer;
+    overflow: hidden;
+}
+.content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-items .spotlight-item img.content {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 99%;
+    height: 99%;
+    padding: 0;
+    z-index: 0;
 }
 .content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-items .spotlight-item .spotlight-nav {
     top: 0;
@@ -646,6 +666,9 @@ button:hover,
     position: absolute;
     width: 4em;
     color: var(--wash-light);
+    z-index: 1;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 82%);
 }
 .content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-items .spotlight-item .spotlight-nav .nav-list {
     display: block;
@@ -1151,6 +1174,7 @@ button:hover,
 
     /* front page spotlight style rules */
     .content-area > .page-wrapper.front-page .home-section.spotlight h2,
+    .content-area > .page-wrapper.front-page .home-section.spotlight h4,
     .content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-items {
         max-width: var(--tablet-width);
         min-width: var(--mobile-width);
@@ -1262,10 +1286,13 @@ button:hover,
         gap: 12px;
         padding: 0;
     }
-    button, .default-button, .primary-button, .secondary-button {
+    .content-area > .hero.front-page .hero-wrapper .button_wrapper .primary-button, 
+    .content-area > .hero.front-page .hero-wrapper .button_wrapper .secondary-button {
         width: auto;
+        margin: auto;
     }
     .content-area > .page-wrapper.front-page .home-section.spotlight h2,
+    .content-area > .page-wrapper.front-page .home-section.spotlight h4,
     .content-area > .page-wrapper.front-page .home-section.spotlight {
         max-width: 100%;
         min-width: 100%;
