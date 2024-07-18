@@ -151,7 +151,7 @@ button,
 .primary-button,
 .secondary-button {
     position: relative;
-    display: inline-block;
+    display: block;
     font-weight: bold;
     font-size: 14pt;
     border-radius: 5px;
@@ -165,6 +165,11 @@ button,
     text-transform: uppercase;
     color: var(--wash-dark);
     background-color: var(--accent-secondary-color);
+    text-decoration: none;
+    text-align: center;
+    width: auto;
+    min-width: 14em;
+    max-width: 20em;
 }
 .primary-button {
     color: var(--wash-dark);
@@ -487,13 +492,11 @@ button:hover,
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
 }
-.content-area > .hero.front-page .hero-wrapper .button_wrapper a {
-    text-decoration: none;
-}
 .content-area > .hero.front-page .hero-wrapper .button_wrapper .primary-button,
 .content-area > .hero.front-page .hero-wrapper .button_wrapper .secondary-button {
     display: block;
     position: relative;
+    width: 14em;
 }
 .content-area > .hero.front-page .hero-wrapper .button_wrapper .secondary-button {
     animation: shake 2.5s infinite;
@@ -565,8 +568,6 @@ button:hover,
     padding-top: 0;
     padding-bottom: 8%;
     background-color: transparent;
-}
-.content-area > .page-wrapper.front-page .home-section {
 }
 /* homepage about area style rules */
 .content-area > .page-wrapper.front-page .home-section {
@@ -933,8 +934,6 @@ button:hover,
 }
 
 /* HOBBIES PAGE: style rules */
-.content-area > .page-wrapper.hobbies {
-}
 .content-area > .page-wrapper.hobbies .container {
     position: relative;
     display: flex;
@@ -981,8 +980,10 @@ button:hover,
     font-weight: bold;
     text-transform: uppercase;
 }
-.content-area > .page-wrapper.hobbies .container .hobbies .caption a,
-.content-area > .page-wrapper.hobbies .container .hobbies .caption a button {
+.content-area > .page-wrapper.hobbies .container .hobbies .caption a {
+    width: 7em;
+    max-width: 7em;
+    min-width: 7em;
     text-decoration: none;
     width: auto;
     margin: auto;
