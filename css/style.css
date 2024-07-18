@@ -1459,8 +1459,8 @@ button:hover,
     .content-area > .page-wrapper.front-page .home-section.spotlight h2,
     .content-area > .page-wrapper.front-page .home-section.spotlight h4,
     .content-area > .page-wrapper.front-page .home-section.spotlight {
-        max-width: 90%;
-        min-width: 90%;
+        max-width: 100%;
+        min-width: 100%;
         padding: 0;
         padding-top: 5px;
     }
@@ -1517,7 +1517,6 @@ button:hover,
         grid-template-columns: repeat(1, 1fr);
     }
 
-    /* Spotlight Page: style rules */
     /* Spotlight Page: style rules */
     .content-area > .page-wrapper.spotlight-page .spotlight-wrapper {
         width: 90%;
