@@ -18,7 +18,7 @@
 
     /* Site Colors */
     --primary-color: #007bff;
-    --secondary-primary-color: #ff9900;
+    --secondary-primary-color: #ffb547;
     --secondary-secondary-color: #34c759;
     --accent-primary-color: #ff69b4;
     --accent-secondary-color: #333333;
@@ -103,6 +103,30 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+}
+
+/* 
+        Scroll wheel modification 
+    Works on Chrome, Edge, and Safari 
+*/
+*::-webkit-scrollbar-corner { background: rgba(0,0,0,0.5); }
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+    border-radius: 20px;
+    border: 3px solid var(--scroll-bar-bg-color);
 }
 
 
@@ -399,20 +423,31 @@ button:hover,
 }
 .site-header > .header-container .nav-area ul li a {
     /*font-family: 'Courier New', Courier, monospace;*/
-    color: var(--wash-dark);
+    position: relative;
+    display: block;
+    margin: auto;
+    color: var(--secondary-primary-color);
     font-weight: bolder;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.2em;
     transition: color 40ms ease-in-out;
 }
-.site-header > .header-container .nav-area ul li a:hover {
-    color: var(--secondary-primary-color);
-    transition: color 40ms ease-in-out;
+.site-header > .header-container .nav-area ul li:hover > a::after {
+    position: absolute;
+    display: block;
+    width: inherit;
+    height: 2px;
+    border: 2px;
+    left:0;
+    right:0;
+    background: var(--wash-dark);
+    content: "";
+    transition: 'all' 40ms ease-in-out;
 }
-.site-header > .header-container .nav-area ul li:has( > a:hover ) {
-    border-bottom: 2px solid var(--secondary-primary-color);
-    transition: border 40ms ease-in-out;
+.site-header > .header-container .nav-area ul li a:hover {
+    color: var(--wash-dark);
+    transition: color 40ms ease-in-out;
 }
 
 
@@ -1028,28 +1063,26 @@ button:hover,
     margin: 0;
 }
 .content-area > .page-wrapper.spotlight-page .spotlight-wrapper {
-    width: inherit;
+    width: auto;
+    max-width: var(--desktop-width);
+    min-width: var(--tablet-width);
+    margin: auto;
 }
 .content-area > .page-wrapper.spotlight-page .spotlight-wrapper h2 {
     position: relative;
     display: block;
-    max-width: var(--desktop-width);
     margin: auto;
     margin-top: 14px;
     margin-bottom: 14px;
-    padding-left: 5px;
 }
 .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items {
-    display: block;
-    list-style-type: none;
+    position: relative;
     display: flex;
+    list-style-type: none;
     flex: 1 1 auto;
     flex-wrap: wrap;
-    width: var(--desktop-width);
-    max-width: var(--desktop-width);
-    min-width: var(--tablet-width);
     margin: auto;
-    justify-content: center;
+    justify-content: left;
     margin: auto;
     margin-bottom: 10em;
 }
@@ -1157,7 +1190,7 @@ button:hover,
     padding: 4px;
     display: inline-block;
     border-radius: 100%;
-    border: 0.2em solid var(--primary-text);
+    border: 0.2em solid var(--secondary-primary-color);
     cursor: pointer;
 }
 .site-footer > .footer-container .social-media ul li  a {
@@ -1180,12 +1213,12 @@ button:hover,
 /* footer links */
 .site-footer a {
     text-decoration: none;
-    color: var(--primary-text);
+    color: var(--secondary-primary-color);
 }
 .site-footer a:hover,
 .site-footer > .footer-container .social-media ul li:hover:has( > a) {
-    color: var(--secondary-primary-color);
-    border-color: var(--secondary-primary-color);
+    color: var(--wash-dark);
+    border-color: var(--wash-dark);
 }
 
 
@@ -1201,18 +1234,8 @@ button:hover,
     /* Fun Fact Page: Mobile style rules */
     .content-area > .page-wrapper.fun-facts-page .fun-fact-content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin: auto;
-    }
-
-    /* Spotlight Page: style rules */
-    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items {
-        width: auto;
-        max-width: 100%;
-        min-width: 100%;
         grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        margin-bottom: 10em;
+        margin: auto;
     }
 }
 
@@ -1253,13 +1276,32 @@ button:hover,
     }
 
     /* Spotlight Page: style rules */
-    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items {
-        width: auto;
-        max-width: 100%;
-        min-width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        margin-bottom: auto;
+    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+        margin: auto;
+    }
+    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper h2 {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+    }
+    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items .spotlight-item {
+        position: relative;
+        display: block;
+        width: 98%;
+        max-width: 98%;
+        min-width: 98%;
+        height: auto;
+        min-height: none;
+        max-height: none;
+    }
+    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items .spotlight-item img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
     }
 
     /* About Page: mobile style rules */
@@ -1424,16 +1466,16 @@ button:hover,
     .content-area > .page-wrapper.front-page .home-section.spotlight h2,
     .content-area > .page-wrapper.front-page .home-section.spotlight h4,
     .content-area > .page-wrapper.front-page .home-section.spotlight {
-        max-width: 100%;
-        min-width: 100%;
+        max-width: 90%;
+        min-width: 90%;
         padding: 0;
         padding-top: 5px;
     }
     .content-area > .page-wrapper.front-page .home-section.spotlight .spotlight-items {
         padding: 0;
         margin: auto;
-        max-width: 98%;
-        min-width: 98%;
+        max-width: 90%;
+        min-width: 90%;
     }
     .content-area > .page-wrapper.front-page .home-section .content {
         flex-direction: column;
@@ -1447,14 +1489,17 @@ button:hover,
     }
 
     /* Fun Fact Page: Mobile style rules */
+    .content-area > .page-wrapper.fun-facts-pag {
+        width: 100%;
+        margin: auto;
+    }
     .content-area > .page-wrapper.fun-facts-page .fun-fact-content {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         margin: auto;
     }
     .content-area > .page-wrapper.fun-facts-page .fun-fact-content .fun-fact {
-        margin: 12px;
-        margin-top: 14px;
+        width: 100%;
     }
 
 
@@ -1464,6 +1509,9 @@ button:hover,
     }
 
     /* Contact Page: Mobile style rules */
+    .content-area > .page-wrapper.contact-page .contact-content {
+        width: 100%;
+    }
     .page-wrapper .contact-personal, .page-wrapper .form {
         width: auto;
         padding: 10px;
@@ -1477,29 +1525,33 @@ button:hover,
     }
 
     /* Spotlight Page: style rules */
-    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items {
-        width: auto;
-        max-width: 100%;
-        min-width: 100%;
-        grid-template-columns: repeat(1, 1fr);
-        justify-content: center;
-        margin-bottom: auto;
+    /* Spotlight Page: style rules */
+    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+        margin: auto;
+    }
+    .content-area > .page-wrapper.spotlight-page .spotlight-wrapper h2 {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
     }
     .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items .spotlight-item {
-        margin: auto;
-        margin-top: 12px;
-        margin-bottom: 12px;
-        width: 95%;
-        max-width: 95%;
-        min-width: 95%;
+        position: relative;
+        display: block;
+        width: 98%;
+        max-width: 98%;
+        min-width: 98%;
         height: auto;
+        min-height: none;
+        max-height: none;
     }
     .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items .spotlight-item img {
+        position: relative;
+        display: block;
         width: 100%;
-        max-width: none;
-        min-width: none;
         height: auto;
-        margin: auto;
     }
 
     /* About Page: mobile style rules */
@@ -1520,7 +1572,8 @@ button:hover,
     /* SUB-PAGE: mobile style rules */
     .content-area > .page-wrapper.sub-page {
         padding: 5px;
-        width: calc(100% - 10px);
+        width: 90%;
+        margin: auto;
     }
     .content-area > .page-wrapper.sub-page .container {
         position: relative;
