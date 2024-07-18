@@ -184,8 +184,6 @@ button,
     width: 98%;
     margin: auto;
     cursor: pointer;
-    transition: "background-color" 500ms ease-in;
-    transition: "border-color" 500ms ease-in;
     text-transform: uppercase;
     color: var(--wash-dark);
     background-color: var(--accent-secondary-color);
@@ -210,8 +208,6 @@ button:hover,
     color: var(--tonner-dark);
     border-color: var(--tonner-light);
     background-color: var(--wash-dark);
-    transition: "background-color" 500ms ease-out;
-    transition: "border-color" 500ms ease-out;
 }
 
 /* spotlight module */
@@ -443,7 +439,6 @@ button:hover,
     right:0;
     background: var(--wash-dark);
     content: "";
-    transition: 'all' 40ms ease-in-out;
 }
 .site-header > .header-container .nav-area ul li a:hover {
     color: var(--wash-dark);
@@ -1294,8 +1289,6 @@ button:hover,
         max-width: 98%;
         min-width: 98%;
         height: auto;
-        min-height: none;
-        max-height: none;
     }
     .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items .spotlight-item img {
         position: relative;
@@ -1544,8 +1537,6 @@ button:hover,
         max-width: 98%;
         min-width: 98%;
         height: auto;
-        min-height: none;
-        max-height: none;
     }
     .content-area > .page-wrapper.spotlight-page .spotlight-wrapper .spotlight-items .spotlight-item img {
         position: relative;
